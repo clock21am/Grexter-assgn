@@ -1,0 +1,53 @@
+<!doctype html>
+<html> 
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+   <script src="../static/scriptage.js"></script>
+    <div ng-app="appi" ng-controller="myctrl"> 
+    <h1>{% raw %} {{ query_name }} {% endraw %} </h1>
+    </div>
+    <style>
+         table, th , td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 5px;
+         }
+         
+         table tr:nth-child(odd) {
+            background-color: #f2f2f2;
+         }
+         table tr:nth-child(even) {
+            background-color: #ffffff;
+         }
+         .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display : inline-block;
+            font-size: 16px;
+        }
+    </style>
+    <body >
+    <table  border=1; > 
+         <thead> 
+         <td>AGE</td>
+         </thead> 
+         {% for row in rows %}
+            <tr> 
+                <td>{{row[0]}}</td>
+            </tr>
+         {% endfor %}
+   
+   </table> 
+    <table>
+    <div>
+          <button class="button"><a href="age_name">Age and name</a> </button>
+          <button class="button"><a href="age">Age</a> </button>
+    </div>
+    </table>
+   </body>
+   
+</html> 
